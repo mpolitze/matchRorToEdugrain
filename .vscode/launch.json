@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug",
+            "preLaunchTask": "${defaultBuildTask}",
+            "runtimeExecutable": "yarn",
+            "cwd": "${workspaceFolder}",
+            "runtimeArgs": ["node", ".", "--verbose", "${input:command}"],
+            "sourceMaps": true,
+            "outputCapture": "std",
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/**",
+                "!**/node_modules/**"
+            ],
+        }
+    ],
+    "inputs": [
+		{
+            "id": "command",
+			"type": "promptString",
+			"default": "MatchRor2Edugain",
+			"description": "Command to execute"
+		}
+	]
+}
